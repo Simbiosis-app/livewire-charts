@@ -2,6 +2,7 @@
 
 This package allows you to add interactive data charts to your apps using Livewire. With a fluent api and built-in Livewire components, you can add charts in your app in no time. You can also add interactions and behaviors to enrich your users' experience. Line, Multiline, Pie, Tree, among other types of charts are ready to use and customized.
 
+[![Total Downloads](https://img.shields.io/packagist/dt/asantibanez/livewire-charts.svg?style=flat-square)](https://packagist.org/packages/asantibanez/livewire-charts)
 
 [![GitHub release](https://img.shields.io/github/release/asantibanez/livewire-charts.svg)](https://github.com/asantibanez/livewire-charts/releases/)
 

@@ -1,3 +1,8 @@
+# Livewire Charts
+
+This package allows you to add interactive data charts to your apps using Livewire. With a fluent api and built-in Livewire components, you can add charts in your app in no time. You can also add interactions and behaviors to enrich your users' experience. Line, Multiline, Pie, Tree, among other types of charts are ready to use and customized.
+
+
 [![GitHub release](https://img.shields.io/github/release/asantibanez/livewire-charts.svg)](https://github.com/asantibanez/livewire-charts/releases/)
 
 ![Livewire Charts](https://banners.beyondco.de/Livewire%20Charts.png?theme=light&packageName=asantibanez%2Flivewire-charts&pattern=graphPaper&style=style_1&description=Neat+Livewire+Charts+for+your+Laravel+projects&md=1&fontSize=100px&images=chart-square-bar)

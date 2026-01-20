@@ -15,13 +15,13 @@ const multiLineChart = () => {
                 this.chart.destroy()
             }
 
-            const title = component.get('lineChartModel.title');
-            const animated = component.get('lineChartModel.animated') || false;
-            const dataLabels = component.get('lineChartModel.dataLabels') || {};
-            const data = component.get('lineChartModel.data');
-            const onPointClickEventName = component.get('lineChartModel.onPointClickEventName');
-            const sparkline = component.get('lineChartModel.sparkline');
-            const jsonConfig = component.get('lineChartModel.jsonConfig');
+            const title = component.lineChartModel.title;
+            const animated = component.lineChartModel.animated || false;
+            const dataLabels = component.lineChartModel.dataLabels || {};
+            const data = component.lineChartModel.data;
+            const onPointClickEventName = component.lineChartModel.onPointClickEventName;
+            const sparkline = component.lineChartModel.sparkline;
+            const jsonConfig = component.lineChartModel.jsonConfig;
 
             const series = Object.keys(data).map(key => {
                 return {
@@ -30,8 +30,8 @@ const multiLineChart = () => {
                 }
             })
 
-            const categories = component.get('lineChartModel.xAxis.categories').length > 0
-                ? component.get('lineChartModel.xAxis.categories')
+            const categories = component.lineChartModel.xAxis.categories.length > 0
+                ? component.lineChartModel.xAxis.categories
                 : data[series[0].name].map(item => item.title)
 
             const options = {
@@ -63,7 +63,7 @@ const multiLineChart = () => {
 
                 dataLabels: dataLabels,
 
-                stroke: component.get('lineChartModel.stroke') || {},
+                stroke: component.lineChartModel.stroke || {},
 
                 title: {
                     text: title,
@@ -71,16 +71,16 @@ const multiLineChart = () => {
                 },
 
                 xaxis: {
-                    labels: component.get('lineChartModel.xAxis.labels'),
+                    labels: component.lineChartModel.xAxis.labels,
                     categories: categories,
                 },
 
-                yaxis: component.get('lineChartModel.yAxis') || {},
+                yaxis: component.lineChartModel.yAxis || {},
 
-                theme: component.get('lineChartModel.theme') || {},
+                theme: component.lineChartModel.theme || {},
             };
 
-            const colors = component.get('lineChartModel.colors');
+            const colors = component.lineChartModel.colors;
 
             if (colors && colors.length > 0) {
                 options['colors'] = colors

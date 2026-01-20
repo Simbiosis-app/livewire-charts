@@ -15,14 +15,14 @@ const pieChart = () => {
                 this.chart.destroy()
             }
 
-            const title = component.get('pieChartModel.title');
-            const animated = component.get('pieChartModel.animated') || false
-            const dataLabels = component.get('pieChartModel.dataLabels') || {}
-            const onSliceClickEventName = component.get('pieChartModel.onSliceClickEventName')
-            const data = component.get('pieChartModel.data')
-            const sparkline = component.get('pieChartModel.sparkline')
-            const type = component.get('pieChartModel.type')
-            const jsonConfig = component.get('pieChartModel.jsonConfig');
+            const title = component.pieChartModel.title;
+            const animated = component.pieChartModel.animated || false
+            const dataLabels = component.pieChartModel.dataLabels || {}
+            const onSliceClickEventName = component.pieChartModel.onSliceClickEventName
+            const data = component.pieChartModel.data
+            const sparkline = component.pieChartModel.sparkline
+            const type = component.pieChartModel.type
+            const jsonConfig = component.pieChartModel.jsonConfig;
 
             const options = {
                 series: data.map(item => item.value),
@@ -55,7 +55,7 @@ const pieChart = () => {
                 colors: data.map(item => item.color),
 
                 fill: {
-                    opacity: component.get('pieChartModel.opacity'),
+                    opacity: component.pieChartModel.opacity,
                 },
 
                 title: {
@@ -74,9 +74,9 @@ const pieChart = () => {
                     }
                 ],
 
-                legend: component.get('pieChartModel.legend') || {},
+                legend: component.pieChartModel.legend || {},
 
-                theme: component.get('pieChartModel.theme') || {},
+                theme: component.pieChartModel.theme || {},
 
                 tooltip: {
                     y: {
@@ -87,7 +87,7 @@ const pieChart = () => {
                 },
             };
 
-            const colors = component.get('pieChartModel.colors');
+            const colors = component.pieChartModel.colors;
 
             if (colors && colors.length > 0) {
                 options['colors'] = colors

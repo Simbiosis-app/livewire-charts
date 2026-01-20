@@ -15,14 +15,14 @@ const treeMapChart = () => {
                 this.chart.destroy()
             }
 
-            const title = component.get('treeMapChartModel.title');
-            const animated = component.get('treeMapChartModel.animated');
-            const distributed = component.get('treeMapChartModel.distributed');
-            const onBlockClickEventName = component.get('treeMapChartModel.onBlockClickEventName');
-            const data = component.get('treeMapChartModel.data');
-            const colors = component.get('treeMapChartModel.colors');
-            const enableShades = component.get('treeMapChartModel.enableShades');
-            const jsonConfig = component.get('treeMapChartModel.jsonConfig');
+            const title = component.treeMapChartModel.title;
+            const animated = component.treeMapChartModel.animated;
+            const distributed = component.treeMapChartModel.distributed;
+            const onBlockClickEventName = component.treeMapChartModel.onBlockClickEventName;
+            const data = component.treeMapChartModel.data;
+            const colors = component.treeMapChartModel.colors;
+            const enableShades = component.treeMapChartModel.enableShades;
+            const jsonConfig = component.treeMapChartModel.jsonConfig;
 
             const series = Object.keys(data)
                 .map(seriesName => ({

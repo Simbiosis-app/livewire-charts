@@ -15,14 +15,14 @@ const radarChart = () => {
                 this.chart.destroy()
             }
 
-            const title = component.get('radarChartModel.title');
-            const animated = component.get('radarChartModel.animated');
-            const onPointClickEventName = component.get('areaChartModel.onPointClickEventName');
-            const dataLabels = component.get('radarChartModel.dataLabels');
-            const data = component.get('radarChartModel.data');
-            const sparkline = component.get('radarChartModel.sparkline');
-            const colors = component.get('radarChartModel.colors');
-            const jsonConfig = component.get('radarChartModel.jsonConfig');
+            const title = component.radarChartModel.title;
+            const animated = component.radarChartModel.animated;
+            const onPointClickEventName = component.areaChartModel.onPointClickEventName;
+            const dataLabels = component.radarChartModel.dataLabels;
+            const data = component.radarChartModel.data;
+            const sparkline = component.radarChartModel.sparkline;
+            const colors = component.radarChartModel.colors;
+            const jsonConfig = component.radarChartModel.jsonConfig;
 
             const series = Object.keys(data)
                 .map(seriesName => ({
@@ -30,8 +30,8 @@ const radarChart = () => {
                     data: data[seriesName].map(item => item.value)
                 }))
 
-            const categories = component.get('radarChartModel.xAxis.categories').length > 0
-                ? component.get('radarChartModel.xAxis.categories')
+            const categories = component.radarChartModel.xAxis.categories.length > 0
+                ? component.radarChartModel.xAxis.categories
                 : data[series[0].name].map(item => item.title)
             ;
 
@@ -61,7 +61,7 @@ const radarChart = () => {
                     }
                 },
 
-                legend: component.get('radarChartModel.legend'),
+                legend: component.radarChartModel.legend,
 
                 plotOptions: {
                     bar: {
@@ -79,7 +79,7 @@ const radarChart = () => {
                 title: { text: title },
 
                 fill: {
-                    opacity: component.get('radarChartModel.opacity'),
+                    opacity: component.radarChartModel.opacity,
                 },
 
                 colors: colors,

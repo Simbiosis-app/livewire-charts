@@ -15,27 +15,27 @@ const multiColumnChart = () => {
                 this.chart.destroy()
             }
 
-            const title = component.get('columnChartModel.title')
-            const stacked = component.get('columnChartModel.isStacked');
-            const animated = component.get('columnChartModel.animated');
-            const onColumnClickEventName = component.get('columnChartModel.onColumnClickEventName')
-            const dataLabels = component.get('columnChartModel.dataLabels');
-            const sparkline = component.get('columnChartModel.sparkline');
-            const legend = component.get('columnChartModel.legend')
-            const grid = component.get('columnChartModel.grid');
-            const columnWidth = component.get('columnChartModel.columnWidth');
-            const horizontal = component.get('columnChartModel.horizontal');
-            const jsonConfig = component.get('columnChartModel.jsonConfig');
+            const title = component.columnChartModel.title
+            const stacked = component.columnChartModel.isStacked;
+            const animated = component.columnChartModel.animated;
+            const onColumnClickEventName = component.columnChartModel.onColumnClickEventName
+            const dataLabels = component.columnChartModel.dataLabels;
+            const sparkline = component.columnChartModel.sparkline;
+            const legend = component.columnChartModel.legend
+            const grid = component.columnChartModel.grid;
+            const columnWidth = component.columnChartModel.columnWidth;
+            const horizontal = component.columnChartModel.horizontal;
+            const jsonConfig = component.columnChartModel.jsonConfig;
 
-            const data = component.get('columnChartModel.data');
+            const data = component.columnChartModel.data;
             const series = Object.keys(data)
                 .map(seriesName => ({
                     name: seriesName,
                     data: data[seriesName].map(item => item.value)
                 }))
 
-            const categories = component.get('columnChartModel.xAxis.categories').length > 0
-                ? component.get('columnChartModel.xAxis.categories')
+            const categories = component.columnChartModel.xAxis.categories.length > 0
+                ? component.columnChartModel.xAxis.categories
                 : data[series[0].name].map(item => item.title)
             ;
 
@@ -89,14 +89,14 @@ const multiColumnChart = () => {
                 },
 
                 fill: {
-                    opacity: component.get('columnChartModel.opacity'),
+                    opacity: component.columnChartModel.opacity,
                 },
 
-                theme: component.get('columnChartModel.theme') || {},
+                theme: component.columnChartModel.theme || {},
 
             };
 
-            const colors = component.get('columnChartModel.colors');
+            const colors = component.columnChartModel.colors;
 
             if (colors && colors.length > 0) {
                 options['colors'] = colors

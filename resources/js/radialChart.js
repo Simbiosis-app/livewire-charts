@@ -15,14 +15,12 @@ const radialChart = () => {
                 this.chart.destroy();
             }
 
-            const data = component.get("radialChartModel.data");
-            const showTotal = component.get("radialChartModel.showTotal");
-            const onBarClickEventName = component.get(
-                "radialChartModel.onBarClickEventName"
-            );
-            const jsonConfig = component.get("radialChartModel.jsonConfig");
+            const data = component.radialChartModel.data;
+            const showTotal = component.radialChartModel.showTotal;
+            const onBarClickEventName = component.radialChartModel.onBarClickEventName;
+            const jsonConfig = component.radialChartModel.jsonConfig;
 
-            const colors = component.get("radialChartModel.colors");
+            const colors = component.radialChartModel.colors;
 
             const options = {
                 series: data.map((item) => item.value),

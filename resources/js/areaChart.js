@@ -15,16 +15,16 @@ const areaChart = () => {
                 this.chart.destroy()
             }
 
-            const title = component.get('areaChartModel.title');
-            const animated = component.get('areaChartModel.animated') || false;
-            const dataLabels = component.get('areaChartModel.dataLabels') || {};
-            const onPointClickEventName = component.get('areaChartModel.onPointClickEventName')
-            const data = component.get('areaChartModel.data');
-            const sparkline = component.get('areaChartModel.sparkline');
-            const jsonConfig = component.get('areaChartModel.jsonConfig');
+            const title = component.areaChartModel.title;
+            const animated = component.areaChartModel.animated || false;
+            const dataLabels = component.areaChartModel.dataLabels || {};
+            const onPointClickEventName = component.areaChartModel.onPointClickEventName
+            const data = component.areaChartModel.data;
+            const sparkline = component.areaChartModel.sparkline;
+            const jsonConfig = component.areaChartModel.jsonConfig;
 
-            const categories = component.get('areaChartModel.xAxis.categories').length > 0
-                ? component.get('areaChartModel.xAxis.categories')
+            const categories = component.areaChartModel.xAxis.categories.length > 0
+                ? component.areaChartModel.xAxis.categories
                 : data.map(item => item.title)
             ;
 
@@ -59,9 +59,9 @@ const areaChart = () => {
 
                 dataLabels: dataLabels,
 
-                colors: [component.get('areaChartModel.color') || '#2E93fA'],
+                colors: [component.areaChartModel.color || '#2E93fA'],
 
-                stroke: component.get('areaChartModel.stroke') || {},
+                stroke: component.areaChartModel.stroke || {},
 
                 title: {
                     text: title,
@@ -71,11 +71,11 @@ const areaChart = () => {
                 labels: data.map(item => item.title),
 
                 xaxis: {
-                    labels: component.get('areaChartModel.xAxis.labels'),
+                    labels: component.areaChartModel.xAxis.labels,
                     categories: categories,
                 },
 
-                yaxis: component.get('areaChartModel.yAxis') || {},
+                yaxis: component.areaChartModel.yAxis || {},
 
                 grid: {
                     padding: {
@@ -86,7 +86,7 @@ const areaChart = () => {
                     }
                 },
 
-                theme: component.get('areaChartModel.theme') || {},
+                theme: component.areaChartModel.theme || {},
 
             };
 

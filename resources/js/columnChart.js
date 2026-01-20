@@ -15,18 +15,18 @@ const columnChart = () => {
                 this.chart.destroy()
             }
 
-            const title = component.get('columnChartModel.title')
-            const animated = component.get('columnChartModel.animated') || false;
-            const onColumnClickEventName = component.get('columnChartModel.onColumnClickEventName')
-            const dataLabels = component.get('columnChartModel.dataLabels') || {};
-            const sparkline = component.get('columnChartModel.sparkline');
-            const legend = component.get('columnChartModel.legend')
-            const grid = component.get('columnChartModel.grid');
-            const columnWidth = component.get('columnChartModel.columnWidth');
-            const horizontal = component.get('columnChartModel.horizontal');
-            const jsonConfig = component.get('columnChartModel.jsonConfig');
+            const title = component.columnChartModel.title
+            const animated = component.columnChartModel.animated || false;
+            const onColumnClickEventName = component.columnChartModel.onColumnClickEventName
+            const dataLabels = component.columnChartModel.dataLabels || {};
+            const sparkline = component.columnChartModel.sparkline;
+            const legend = component.columnChartModel.legend
+            const grid = component.columnChartModel.grid;
+            const columnWidth = component.columnChartModel.columnWidth;
+            const horizontal = component.columnChartModel.horizontal;
+            const jsonConfig = component.columnChartModel.jsonConfig;
 
-            const data = component.get('columnChartModel.data');
+            const data = component.columnChartModel.data;
             const series = [{
                 name: title,
                 data: data.map(item => item.value)
@@ -91,10 +91,10 @@ const columnChart = () => {
                 },
 
                 fill: {
-                    opacity: component.get('columnChartModel.opacity') || 0.5
+                    opacity: component.columnChartModel.opacity || 0.5
                 },
 
-                theme: component.get('columnChartModel.theme') || {},
+                theme: component.columnChartModel.theme || {},
 
                 tooltip: {
                     y: {
@@ -106,7 +106,7 @@ const columnChart = () => {
 
             };
 
-            const colors = component.get('columnChartModel.colors');
+            const colors = component.columnChartModel.colors;
 
             if (colors && colors.length > 0) {
                 options['colors'] = colors

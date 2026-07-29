@@ -1,10 +1,11 @@
 <?php
 
+namespace Asantibanez\LivewireCharts\Tests;
 
 use Asantibanez\LivewireCharts\Charts\LivewireRadialChart;
-use Asantibanez\LivewireCharts\Tests\TestCase;
 use Livewire\Features\SupportTesting\Testable;
 use Livewire\Livewire;
+use PHPUnit\Framework\Attributes\Test;
 
 class LivewireRadialChartTest extends TestCase
 {
@@ -13,7 +14,7 @@ class LivewireRadialChartTest extends TestCase
         return Livewire::test(LivewireRadialChart::class);
     }
 
-    /** @test */
+    #[Test]
     public function can_build_component()
     {
         //Act
@@ -23,7 +24,7 @@ class LivewireRadialChartTest extends TestCase
         $this->assertNotNull($component);
     }
 
-    /** @test */
+    #[Test]
     public function should_emit_event_if_present()
     {
         //Arrange
